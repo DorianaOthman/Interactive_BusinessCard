@@ -1,3 +1,3 @@
 document.getElementById('business-card').addEventListener('click', function() {
-  this.classList.toggle('flipped');
+    this.classList.toggle('flipped');
 });
