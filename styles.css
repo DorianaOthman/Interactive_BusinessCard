@@ -1,17 +1,20 @@
 /*Comments look like this in CSS! Check the 
-comments below for instructions on what to change
+comments below for instructions on what to change/explantions
 */
+
+/* General Page Styling */
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;  /* 100% of viewport height*/
-  background-color: #f0f0f0; /* page background height*/
+  height: 100vh;  /* Full viewport height */
+  background-color: #f0f0f0; /* Page background color */
   margin: 0;
-  font-family: Arial, sans-serif; /* Fonts you can use!*/
-  font-size: 100%
+  font-family: Arial, sans-serif; /* Default font family */
+  font-size: 100%; /* Base font size */
 }
 
+/* Text Styling */
 .name {
   margin-bottom: 10px;
   font-size: 2.5em;
@@ -21,42 +24,43 @@ body {
   margin-top: 5px;
 }
 
-.website {
-  margin-bottom:  0px;
+.website, .contact-title {
+  margin-bottom: 0;
 }
 
 .contact-title {
   margin-top: 30px;
-  margin-bottom: 0px;
 }
 
 .contact-info {
-  margin-top: 3px;
-  margin-bottom: 8px;
+  margin: 3px 0 8px;
 }
 
+/* Social Media Icons */
 .socials {
   display: flex;
-  justify-content: center; /* Centers the images horizontally */
-  gap: 8px; 
+  justify-content: center;
+  gap: 8px;
 }
 
+/* Card Container */
 .card {
   width: 525px;
   height: 300px;
   perspective: 1000px;
 }
 
-/*Attributes that affect both the front and back of card*/
-.card-front, .card-back { 
-  width: 100%;                 
-  height: 100%;                   
-  background-color: #e7ca56;      
-  position: absolute;             
-  backface-visibility: hidden;    
-  border: 1px solid #ccc;      
-  display: flex;                  
-  justify-content: center;       
+/* Card Front and Back Shared Attributes */
+.card-front, 
+.card-back { 
+  width: 100%;
+  height: 100%;
+  background-color: #e7ca56;
+  position: absolute;
+  backface-visibility: hidden;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -64,40 +68,35 @@ body {
   border-radius: 10px;
 }
 
+/* Card Back Specific */
 .card-back {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg); /* Flips from 360 degrees to 180 degrees position */
 }
 
-.card.flipped .card-front {  /*Code that tells computer to flip card to front*/
-  transform: rotateY(180deg);
+/* Card Flip States */
+.card.flipped .card-front {
+  transform: rotateY(180deg); /* Flips from 360 degrees to 180 degrees position */
 }
 
-.card.flipped .card-back { /*Code that tells computer to flip card to bacl*/
-  transform: rotateY(360deg);
+.card.flipped .card-back {
+  transform: rotateY(360deg); /* Flips from 180 degrees to 360 degrees position */
 }
 
-.email-link {
-  color: #000; /* Default color for the email text */
-  text-decoration: none; /* Remove the underline */
-  transition: color 0.3s ease; /* Smooth transition for the hover effect */
-}
-
-.email-link:hover {
-  color: #007BFF; /* Highlight color on hover (change this to your preferred color) */
-  text-decoration: underline; /* Optionally add underline on hover */
-}
-
+/* Link Styling */
+.email-link, 
 .website-link {
-  color: #000; /* Default color for the website link text */
-  text-decoration: none; /* Remove the underline */
-  transition: color 0.3s ease; /* Smooth transition for the hover effect */
+  color: #000; /* Default color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth transition on hover */
 }
 
+.email-link:hover,
 .website-link:hover {
-  color: #007BFF; /* Highlight color on hover (change this to your preferred color) */
-  text-decoration: underline; /* Optionally add underline on hover */
+  color: #007BFF; /* Highlight color on hover */
+  text-decoration: underline; /* Add underline on hover */
 }
 
+/* Image Styling */
 .card-image {
   max-width: 100%;
   max-height: 100%;
