@@ -4,7 +4,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background: radial-gradient(circle, #8c0808, #000000);
+  background: radial-gradient(circle, #f3e4e4, #000000);
 .card {
   position: relative;
   width: 300px;
