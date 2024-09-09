@@ -5,6 +5,8 @@ body {
   height: 100vh;
   margin: 0;
   background: radial-gradient(circle, #f3e4e4, #000000);
+}
+
 .card {
   position: relative;
   width: 300px;
@@ -13,12 +15,34 @@ body {
 
 }
 
+@font-face
+{
+font-family: SoulCalibuR;
+src: url('Soul_Calibur.ttf');
 
-.shield, .sword-front, .sword-back, .chains {
+}
+
+@font-face
+{
+font-family: TempusSansITC;
+src: url('TEMPSITC.TTF');
+}
+
+@font-face
+{
+font-family: BernardMT-Condensed;
+src: url('BERNHC.TTF');
+}
+
+.shield,
+.sword-front,
+.sword-back,
+.chains {
   position: absolute;
   top: 130px;
   transition: transform 0.6s ease-in-out;
-  pointer-events: auto; /* Ensure pointer events are enabled */
+  pointer-events: auto;
+  /* Ensure pointer events are enabled */
 }
 
 .shield {
@@ -45,6 +69,7 @@ body {
   backface-visibility: hidden;
   z-index: 1;
 }
+
 .chains {
   position: absolute;
   width: 59%;
@@ -52,9 +77,12 @@ body {
   left: 65px;
   top: 220px;
   background: url('chains.png') no-repeat center center;
-  background-size: contain; /* Adjust as needed */
-  z-index: 1; /* Ensure it appears above the SVG elements but below the card’s flipped state */
-  opacity: 0; /* Start hidden */
+  background-size: contain;
+  /* Adjust as needed */
+  z-index: 1;
+  /* Ensure it appears above the SVG elements but below the card’s flipped state */
+  opacity: 0;
+  /* Start hidden */
   transition: opacity 0.1s ease-in-out;
   transform: rotateY(180deg)
 }
@@ -63,9 +91,12 @@ body {
   transition: opacity 0.1s ease-in-out;
   transition-delay: 0.36s;
   z-index: 5;
-  opacity: 1; /* Show chains when the card is flipped */
-  pointer-events: none; /* Prevent the chains from interfering with mouse events */
-  transform: rotateY(0deg); /* Rotate and slightly scale for a natural effect */
+  opacity: 1;
+  /* Show chains when the card is flipped */
+  pointer-events: none;
+  /* Prevent the chains from interfering with mouse events */
+  transform: rotateY(0deg);
+  /* Rotate and slightly scale for a natural effect */
 }
 
 
@@ -85,7 +116,7 @@ body {
 }
 
 .sword-out .sword-front {
-  transform: translateY(-70%) rotate(270deg)!important;
+  transform: translateY(-70%) rotate(270deg) !important;
 }
 
 .sword-out .sword-back {
@@ -102,13 +133,18 @@ body {
 
 /* Define styles for the highlighted path */
 .highlight {
-  stroke: red !important; /* Highlight color */
-  stroke-width: 8 !important; /* Optional: Increase stroke width on highlight */
-  cursor: pointer !important; /* Cursor changes only when highlighted */
+  stroke: red !important;
+  /* Highlight color */
+  stroke-width: 8 !important;
+  /* Optional: Increase stroke width on highlight */
+  cursor: pointer !important;
+  /* Cursor changes only when highlighted */
 }
 
-#sword-front text:hover  {
+#sword-front text:hover {
   cursor: pointer !important;
-  fill: #007BFF !important; /* Highlight color on hover */
-  text-decoration: underline; /* Add underline on hover */
+  fill: #007BFF !important;
+  /* Highlight color on hover */
+  text-decoration: underline;
+  /* Add underline on hover */
 }
