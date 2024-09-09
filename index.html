@@ -1,32 +1,22 @@
-<!-- This is what a comment looks like in HTML (this file), which means it is not
-functional code. See the comments below to know what to change!
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Business Card</title> <!-- This is the webpage title (words in the webpage tab). Change to whatever you wany -->
+    <title>Sword and Shield Animation</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="card" id="business-card">
-        <div class="card-back">
-            <h1 class="website"><a href="https://www.YourWebsite.com" class="website-link no-flip" target="_blank">www.YourWebsite.com</a></h1>
-            <h3 class="contact-title">Contact Me:</h3>
-            <p class="contact-info"><a href="mailto:your.email@example.com" class="email-link no-flip">your.email@example.com</a></p>
-            <div class="socials no-flip">
-              <a href="https://www.linkedin.com/" target="_blank"><img src="LI_logo.png" alt="LinkedIn Info" width="20" height="20"></a>
-              <a href="https://www.instagram.com/" target="_blank"><img src="Instagram_logo.png" alt="Instagram Info" width="20" height="20"></a>
-              <a href="https://x.com/" target="_blank"><img src="X_logo.png" alt=" X Info" width="20" height="20"></a>
-            </div>
+    <div class="card">
+        <audio id="sword-pulled" src="sword_pulled.mp3" preload="auto"></audio>
+        <audio id="sword-placed" src="sword_placed.mp3" preload="auto"></audio>
+        <audio id="sword-swing" src="sword_swing.mp3" preload="auto"></audio>
+        <div class="svg-container">
+            <div class="shield" id="shield"></div>
+            <div class="sword-front" id="sword-front"></div>
+            <div class="sword-back" id="sword-back"></div>
+            <div class="chains" id="chains"></div>
         </div>
-        <div class="card-front">
-            <h1 class="name">Full Name</h1> <!-- Put your name here -->
-            <p class="job-title">Your Title Here </p> <!-- Put your title here -->
-        </div>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>

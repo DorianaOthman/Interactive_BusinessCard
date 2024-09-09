@@ -1,104 +1,114 @@
-/*Comments look like this in CSS! Check the 
-comments below for instructions on what to change/explantions
-*/
-
-/* General Page Styling */
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;  /* Full viewport height */
-  background-color: #f0f0f0; /* Page background color */
+  height: 100vh;
   margin: 0;
-  font-family: Arial, sans-serif; /* Default font family */
-  font-size: 100%; /* Base font size */
-}
-
-/* Text Styling */
-.name {
-  margin-bottom: 10px;
-  font-size: 2.5em;
-}
-
-.job-title {
-  margin-top: 5px;
-}
-
-.website, .contact-title {
-  margin-bottom: 0;
-}
-
-.contact-title {
-  margin-top: 30px;
-}
-
-.contact-info {
-  margin: 3px 0 8px;
-}
-
-/* Social Media Icons */
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-}
-
-/* Card Container */
+  background: radial-gradient(circle, #8c0808, #000000);
 .card {
-  width: 525px;
-  height: 300px;
+  position: relative;
+  width: 300px;
+  height: 600px;
   perspective: 1000px;
+
 }
 
-/* Card Front and Back Shared Attributes */
-.card-front, 
-.card-back { 
-  width: 100%;
-  height: 100%;
-  background-color: #e7ca56;
+
+.shield, .sword-front, .sword-back, .chains {
   position: absolute;
+  top: 130px;
+  transition: transform 0.6s ease-in-out;
+  pointer-events: auto; /* Ensure pointer events are enabled */
+}
+
+.shield {
+  width: 100%;
+  height: 80%;
+  z-index: 3;
+}
+
+.sword-front {
+  left: 75px;
+  width: 57%;
+  height: 75%;
+  z-index: 2;
+  transform: rotateZ(8deg);
+
   backface-visibility: hidden;
-  border: 1px solid #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.6s;
-  border-radius: 10px;
 }
 
-/* Card Back Specific */
-.card-back {
-  transform: rotateY(180deg); /* Flips from 360 degrees to 180 degrees position */
+.sword-back {
+  left: 75px;
+  width: 57%;
+  height: 75%;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  z-index: 1;
+}
+.chains {
+  position: absolute;
+  width: 59%;
+  height: 59%;
+  left: 65px;
+  top: 220px;
+  background: url('chains.png') no-repeat center center;
+  background-size: contain; /* Adjust as needed */
+  z-index: 1; /* Ensure it appears above the SVG elements but below the card’s flipped state */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.1s ease-in-out;
+  transform: rotateY(180deg)
 }
 
-/* Card Flip States */
-.card.flipped .card-front {
-  transform: rotateY(180deg); /* Flips from 360 degrees to 180 degrees position */
+.card.flipped .chains {
+  transition: opacity 0.1s ease-in-out;
+  transition-delay: 0.36s;
+  z-index: 5;
+  opacity: 1; /* Show chains when the card is flipped */
+  pointer-events: none; /* Prevent the chains from interfering with mouse events */
+  transform: rotateY(0deg); /* Rotate and slightly scale for a natural effect */
 }
 
-.card.flipped .card-back {
-  transform: rotateY(360deg); /* Flips from 180 degrees to 360 degrees position */
+
+.card.flipped .shield {
+  transform: rotateY(180deg);
 }
 
-/* Link Styling */
-.email-link, 
-.website-link {
-  color: #000; /* Default color */
-  text-decoration: none; /* Remove underline */
-  transition: color 0.3s ease; /* Smooth transition on hover */
+.card.flipped .sword-front {
+  transform: rotateY(180deg);
 }
 
-.email-link:hover,
-.website-link:hover {
-  color: #007BFF; /* Highlight color on hover */
+.card.flipped .sword-back {
+  transform: rotateY(0deg);
+  transform: rotateZ(-8deg);
+
+  z-index: 4;
+}
+
+.sword-out .sword-front {
+  transform: translateY(-70%) rotate(270deg)!important;
+}
+
+.sword-out .sword-back {
+  transform: translateY(-70%) rotate(90deg) rotateY(180deg) !important;
+}
+
+.sword-front.flipped-horizontal {
+  transform: translateY(-70%) rotateY(180deg) rotate(90deg) !important;
+}
+
+.sword-back.flipped-horizontal {
+  transform: translateY(-70%) rotate(90deg) !important;
+}
+
+/* Define styles for the highlighted path */
+.highlight {
+  stroke: red !important; /* Highlight color */
+  stroke-width: 8 !important; /* Optional: Increase stroke width on highlight */
+  cursor: pointer !important; /* Cursor changes only when highlighted */
+}
+
+#sword-front text:hover  {
+  cursor: pointer !important;
+  fill: #007BFF !important; /* Highlight color on hover */
   text-decoration: underline; /* Add underline on hover */
-}
-
-/* Image Styling */
-.card-image {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 10px;
 }
