@@ -6,7 +6,9 @@ const swordBack = document.getElementById('sword-back');
 const swordPulled = document.getElementById('sword-pulled');
 const swordPlaced = document.getElementById('sword-placed');
 const swordSwing = document.getElementById('sword-swing');
-
+swordPlaced.volume = 0.4
+swordPulled.volume = 0.12
+swordSwing.volume = 0.12
 
 let swordOut = false;
 let cardFlipped = false;
