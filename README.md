@@ -2,7 +2,7 @@
 A simple interactive business card template.
 
 Functionality:
-The hard flips horizontally from front to back
+- The hard flips horizontally from front to back
 
 Front:
 By default, the front of the business card allows for:
